@@ -1,2 +1,2 @@
 class LocationHandler:
-    
+    pass

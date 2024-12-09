@@ -46,5 +46,17 @@
         "contractorID": "2",
         "isCompleted": false,
         "roomFacilityId": "r103"
+    },
+    {
+        "id": 0,
+        "date": "",
+        "description": "balkd",
+        "propertyNumber": "F11100",
+        "userID": 0,
+        "priority": "now",
+        "workReport": [],
+        "contractorID": -1,
+        "isCompleted": false,
+        "roomFacilityId": "r101"
     }
 ]

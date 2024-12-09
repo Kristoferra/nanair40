@@ -1,4 +1,4 @@
-from baseClasses.WorkReport import WorkReport
+from baseClasses.workReport import WorkReport
 from dataControl.workReportController import WorkReportController
 from typing import Any
 

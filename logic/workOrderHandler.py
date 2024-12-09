@@ -1,4 +1,4 @@
-from baseClasses.WorkOrder import WorkOrder
+from baseClasses.workOrder import WorkOrder
 from dataControl.workOrderController import WorkController
 from typing import Any
 
