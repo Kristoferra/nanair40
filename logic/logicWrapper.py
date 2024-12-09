@@ -21,6 +21,8 @@ class Logic_Wrapper:
         self.workOrderHandler = WorkOrderHandler()
         self.workReportHandler = WorkReportHandler()
         self.contractorHandler = ContractorHandler()
+        self.currentContractorID: int = self.contractorHandler.listContractors()[-1].id
+        self.currentWorkOrderID: int = self.workOrderHandler.listWorkOrders()[-1].id
 
     def addEmployee(self, employee: Employee) -> bool:
         return self.employeeHandler.addEmployee(employee)
