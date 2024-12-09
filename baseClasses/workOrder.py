@@ -12,7 +12,7 @@ class WorkOrder:
         self.propertyNumber: int = propertyNumber
         self.userID: int = userID
         self.priority: int = priority # 0 1 2
-        self.workReport: list['WorkReport'] = workReport # class workReport
+        self.workReport: list['WorkReport'] = workReport
         self.contractorID: int = contractorID # if it is -1 it is nobody if it is > -1 then it is an actual contrator
         self.isCompleted: bool = isCompleted
         self.roomFacilityId: int = roomFacilityId
