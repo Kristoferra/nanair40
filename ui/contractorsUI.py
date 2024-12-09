@@ -41,13 +41,14 @@ class ContractorsUI(SearchUI):
             contractorClass.__dict__[key] = value
         
         # contractor isntance is created
-        newContractor = Contractor(contractorClass.__dict__["id"], contractorClass.__dict__["name"], contractorClass.__dict__["phone"], contractorClass.__dict__["openingHours"], contractorClass.__dict__["location"])
+        self.logicWrapper.currentContractorID+=1
+        newContractor = Contractor(self.logicWrapper.currentContractorID, contractorClass.__dict__["name"], contractorClass.__dict__["phone"], contractorClass.__dict__["openingHours"], contractorClass.__dict__["location"])
 
         # contractor instance sent to the logic layer where its then stored in a json file
         self.logicWrapper.addContractor(newContractor)
 
         # Print a menu with all of the contractor information that was just created, the user can either quit or go back
-        return self.takeInputAndPrintMenu(['[Q]uit', '[B]ack'], ('Add Constractor', [f'{key}: {value}' for key, value in contractorClass.__dict__.items()], 'The Contractor has been succesfully created\nChoose a option: '))
+        return self.takeInputAndPrintMenu(['[Q]uit', '[B]ack'], ('Add Constractor', [f'{key}: {value}' for key, value in newContractor.__dict__.items()], 'The Contractor has been succesfully created\nChoose a option: '))
         
 
 

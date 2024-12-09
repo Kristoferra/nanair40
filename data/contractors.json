@@ -47,5 +47,12 @@
         "phone": "7721119",
         "openingHours": "2-9",
         "location": "4"
+    },
+    {
+        "id": 10,
+        "name": "test",
+        "phone": "1234567",
+        "openingHours": "5-5",
+        "location": "5"
     }
 ]
