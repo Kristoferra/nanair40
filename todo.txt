@@ -7,3 +7,6 @@ ADD MORE VALIDATION TO LOGIC LAYER, EXAMPLE WHEN CREATING A EMPLOYEE IF THE KENN
 something seems to be wrong with the list property function when assigning a id
 make the system assign ID to workOrders 
 contractors id only work on strings but when adding a new contractor into the system it gets written as a int
+
+
+how often task needs to happen reaccuring
