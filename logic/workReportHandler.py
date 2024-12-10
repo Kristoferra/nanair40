@@ -1,6 +1,15 @@
 from baseClasses.workReport import WorkReport
 from dataControl.workReportController import WorkReportController
 from typing import Any
+from datetime import datetime
+
+def is_date_in_range(check_date_str, start_date_str, end_date_str):
+    check_date = datetime.strptime(check_date_str, "%d-%m-%Y")
+    start_date = datetime.strptime(start_date_str, "%d-%m-%Y")
+    end_date = datetime.strptime(end_date_str, "%d-%m-%Y")
+    
+    return start_date <= check_date <= end_date
+
 
 
 class WorkReportHandler:
@@ -48,3 +57,19 @@ class WorkReportHandler:
 
         return workReports[-1].id+1
 
+
+    def listByDateRange(self, start: str, end: str, **kwargs) -> list[WorkReport]:
+        if not start:
+            return self.listWorkReports(date=end, **kwargs)
+        if not end:
+            return self.listWorkReports(date=start, **kwargs)
+
+        workReports: list[WorkReport] = self.listWorkReports(**kwargs)
+        final: list[WorkReport] = []
+        for workReport in workReports:
+            if not workReport.date:
+                continue
+            if is_date_in_range(workReport.date, start, end):
+                final.append(workReport)
+
+        return final

@@ -14,6 +14,7 @@ from logic.contractorHandler import ContractorHandler
 from baseClasses.Contractor import Contractor
 from typing import Any
 
+
 class Logic_Wrapper:
     def __init__(self) -> None:
         self.employeeHandler = EmployeeHandler()

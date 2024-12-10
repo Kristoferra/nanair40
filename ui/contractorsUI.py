@@ -13,7 +13,7 @@ class ContractorsUI(SearchUI):
     
     def showContractor(self):
         '''Asks the user whether he wants to list all contractors, add contractors or edit contractors info'''
-        userInput = self.takeInputAndPrintMenu(['[A]dd contractor', '[E]dit contractor', '[L]ist contractors'], ('Contractor Menu', ['[A]dd contractor', '[E]dit contractor', '[L]ist contractors'], 'Choose a option'))
+        userInput = self.takeInputAndPrintMenu(['Add contractor', 'Edit contractor', 'List contractors'], ('Contractor Menu', ['Add contractor', 'Edit contractor', 'List contractors'], 'Choose a option'))
 
         match userInput.lower():
             case 'l':

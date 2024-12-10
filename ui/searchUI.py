@@ -8,12 +8,17 @@ validation = ValidationUI()
 quitOrback = ['q', 'b']
 
 
+"""
+MAYBE INSTEAD OF MAKING WITHOUT BRACKETS FUNCTION MAKE A FUNCTION ARGUMENT?
+"""
+
+
 class SearchUI(BaseUI):
     def __init__(self, logicWrapper: Logic_Wrapper = None):
         self.logicWrapper = logicWrapper
 
     def employeeSearch(self) -> str | bool:
-        options = ['[K]ennitala search', '[L]ocation search']
+        options = ['Kennitala search', 'Location search']
         userOption = self.takeInputAndPrintMenu(options, ('Employee search', options, 'Choose a option'))
 
 
@@ -81,14 +86,14 @@ class SearchUI(BaseUI):
     
     
 
-        return self.takeInputAndPrintMenu(['[Q]uit', '[B]ack'], (f'List employees', body, 'Choose a option: '))
+        return self.takeInputAndPrintMenuWithoutBrackets(['[Q]uit', '[B]ack'], (f'List employees', body, 'Choose a option: '))
     
 
 
 
     def propertySearch(self) -> str:
                 # use Search class there is Employee Search class there that can search by any param in this case kennitala
-        userOption = self.takeInputAndPrintMenu( ['[L]ocation search', '[P]roperty number search'], ('View property', ['[L]ocation search', '[P]roperty number search'], "Choose a option: "))
+        userOption = self.takeInputAndPrintMenu( ['Location search', 'Property number search'], ('View property', ['Location search', 'Property number search'], "Choose a option: "))
         if userOption.lower() in quitOrback:
             return userOption.lower()
         match userOption.lower():
@@ -143,7 +148,7 @@ class SearchUI(BaseUI):
             body.append(line)
 
 
-        return self.takeInputAndPrintMenu(['[Q]uit', '[B]ack'], (f'List properties', body, 'Choose a option'))
+        return self.takeInputAndPrintMenuWithoutBrackets(['[Q]uit', '[B]ack'], (f'List properties', body, 'Choose a option'))
     
 
     def showropertyNumberSearch(self) -> str | bool:
@@ -166,7 +171,7 @@ class SearchUI(BaseUI):
 
 
     def workOrderSearch(self) -> str | bool:
-        options = ['[I]D search', '[P]roperty number search', '[K]ennitala search']
+        options = ['ID search', 'Property number search', 'Kennitala search']
         userOption = self.takeInputAndPrintMenu(options, ('Search work order', options, 'Choose a option:  '))
         work_orders = []
 
@@ -275,7 +280,7 @@ class SearchUI(BaseUI):
     
     
 
-        return self.takeInputAndPrintMenu(userOption, (f'List contractors', body, options))
+        return self.takeInputAndPrintMenuWithoutBrackets(userOption, (f'List contractors', body, options))
 
 
  

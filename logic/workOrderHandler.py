@@ -1,6 +1,45 @@
 from baseClasses.workOrder import WorkOrder
 from dataControl.workOrderController import WorkController
 from typing import Any
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+
+"""
+    TODO:
+    >    Add list by specific date and add by specific date range
+    >    Same for work reports
+    >    What contractor did for specific date/date range
+    >    What some specific employee has done on date/date range basically same as contractor thing
+"""
+
+def is_date_in_range(check_date_str, start_date_str, end_date_str):
+    check_date = datetime.strptime(check_date_str, "%d-%m-%Y")
+    start_date = datetime.strptime(start_date_str, "%d-%m-%Y")
+    end_date = datetime.strptime(end_date_str, "%d-%m-%Y")
+    
+    return start_date <= check_date <= end_date
+
+def time_diff_category(date1_str, date2_str):
+    # Define the date format
+    date_format = "%d.%m.%Y"
+    
+    # Parse the date strings into datetime objects
+    date1 = datetime.strptime(date1_str, date_format)
+    date2 = datetime.strptime(date2_str, date_format)
+    
+    # Calculate the absolute difference
+    delta = relativedelta(date2, date1)
+    
+    # Check the difference and return appropriate category
+    if delta.years > 0:
+        return 4  # Year
+    elif delta.months > 0:
+        return 3  # Month
+    elif delta.days > 7:
+        return 2  # Week
+    else:
+        return 1  # Day
+
 
 
 class WorkOrderHandler:
@@ -63,3 +102,40 @@ class WorkOrderHandler:
 
 
         return workOrder
+
+
+    def listRepeatingWorkOrders(self, **kwargs) -> list[WorkOrder]:
+        repeatingList: list[WorkOrder] = self.listWorkOrders(repeating=True)
+
+        currentDate = datetime.now()
+        currentDate = currentDate.strftime("%d.%m.%Y")
+
+        final = []
+        for workOrder in repeatingList:
+            if not workOrder.date:
+                continue
+            if not workOrder.isCompleted:
+                final.append(workOrder)
+                continue
+            tdif = time_diff_category(workOrder.workReport[-1].date, currentDate)
+            if tdif >= workOrder.repeatInterval:
+                self.workOrderControl.changeOneEntry("id", workOrder.id, isCompleted=False)
+                final.append(workOrder)
+        return final
+
+
+    def listByDateRange(self, start: str, end: str, **kwargs) -> list[WorkOrder]:
+        if not start:
+            return self.listWorkOrders(date=end, **kwargs)
+        if not end:
+            return self.listWorkOrders(date=start, **kwargs)
+
+        workOrders: list[WorkOrder] = self.listWorkOrders(**kwargs)
+        final: list[WorkOrder] = []
+        for workOrder in workOrders:
+            if not workOrder.date:
+                continue
+            if is_date_in_range(workOrder.date, start, end):
+                final.append(workOrder)
+
+        return final
