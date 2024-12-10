@@ -40,3 +40,11 @@ class WorkReportHandler:
 
 
         return workReports
+
+    def currentWorkReportID(self, workOrderID: int) -> int:
+        workReports: list['WorkReport'] = self.listWorkReports(workOrderID=workOrderID)
+        if not len(workReports):
+            return 1
+
+        return workReports[-1].id+1
+
