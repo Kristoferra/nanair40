@@ -36,14 +36,10 @@ class SearchUI(BaseUI):
     def showEmployeeID(self) -> str | bool:
         # use Search class there is Employee Search class there that can search by any param in this case kennitala
         employee = []
+        lookUpKennitala = self.getValidInput("look for employee","Enter ID: ", validation.validateKennitala)
         while not employee:
-            lookUpKennitala = self.getValidInput("look for employee","Enter ID: ", validation.validateKennitala)
-            match lookUpKennitala.lower():
-                case 'q':
-                    return 'q' # quit the whole program
-                case 'b':
-                    return False # Go back one page
-    
+            if lookUpKennitala.lower() in quitOrback:
+                return lookUpKennitala.lower()
             employee = self.logicWrapper.listEmployees(kennitala=lookUpKennitala)  # Call the wrapper that is
 
         employee_list = [f'{key}: {value}' for key, value in list(employee[0].__dict__.items())[1:]]
@@ -57,20 +53,20 @@ class SearchUI(BaseUI):
         body = []
 
         # Initialize column names
-        headers = ['Name', 'Address', 'Phone number']
+        headers = ['Name', 'Location', 'Phone number']
 
         # Calculate the maximum width for each column
 
         max_name_length = max(len(employee.name) for employee in employee_list)
-        max_address_length = max(len(employee.address) for employee in employee_list)
-        max_phone_length = max(len(employee.phone) for employee in employee_list)
+        max_location_length = 12
+        max_phone_length = 12
 
 
         # Build the line separator based on the column widths
-        line = '+' + '-' * (max_name_length + 2) + '+' + '-' * (max_address_length + 2) + '+' + '-' * (max_phone_length + 2) + '+'
+        line = '+' + '-' * (max_name_length + 2) + '+' + '-' * (max_location_length + 2) + '+' + '-' * (max_phone_length + 2) + '+'
 
         # Build the header row
-        header_row = f"| {headers[0]:<{max_name_length}} | {headers[1]:<{max_address_length}} | {headers[2]:<{max_phone_length}}|"
+        header_row = f"| {headers[0]:<{max_name_length}} | {headers[1]:<{max_location_length}} | {headers[2]:<{max_phone_length}} |"
 
         # Append the header and line to body
         body.append(line)
@@ -79,7 +75,7 @@ class SearchUI(BaseUI):
 
         # Build each employee row
         for dict in employee_list:
-            line_content = f"| {dict.name:<{max_name_length}} | {dict.address:<{max_address_length}} | {dict.phone:<{max_phone_length}} |"
+            line_content = f"| {dict.name:<{max_name_length}} | {dict.location:<{max_location_length}} | {dict.phone:<{max_phone_length}} |"
             body.append(line_content)
             body.append(line)
     
@@ -233,7 +229,8 @@ class SearchUI(BaseUI):
 
 
 
-    def workReportSearch(self) -> str | bool:
+
+    def workReportSearch(self) -> str:
         pass
 
     def workReportSearch(self) -> str | bool:
@@ -253,7 +250,7 @@ class SearchUI(BaseUI):
         max_name_length = max(len(contractor.name) for contractor in contractors)
         max_phone_length = 7
         max_openingHours_length = 5
-        max_location_length = 12
+        max_location_length = 14
         max_id_length = 5
 
 

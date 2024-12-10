@@ -33,7 +33,7 @@ class PropertyHandler:
             # Because things get deleted if they do not match the query before we loop through them if we go bottom to top
             for i in range(len(properties)-1, -1, -1):
                 # hack around to check if result that might be int or float partialy contains our target number
-                if str(v) not in str(properties[i].__dict__[k]):
+                if str(v) != str(properties[i].__dict__[k]):
                     del properties[i]
 
 

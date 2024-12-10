@@ -66,7 +66,11 @@ class BaseUI:
         options_list = self.available_options(possibilites) 
 
         while True:
+            if error:
+                menuInformation[2] = errorMessage + menuInformation[2]
+                errorMessage = ''
             self.printBaseMenu(menuInformation[0], menuInformation[1], menuInformation[2])
+    
             user_option = input(' ') 
 
         

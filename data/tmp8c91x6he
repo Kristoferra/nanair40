@@ -1,0 +1,1511 @@
+[
+    {
+        "kennitala": 32,
+        "name": "Sven Jonsson",
+        "phone": "+3545678901",
+        "homePhone": "+3545432109",
+        "address": "654 Pine Ave, Kopavogur",
+        "email": "sven.jonsson@example.com",
+        "location": "Reykjav\u00edk"
+    },
+    {
+        "kennitala": "0511042930",
+        "name": "helgi thor",
+        "phone": "1111111",
+        "homePhone": "8202938",
+        "address": "hjallalaut 7",
+        "email": "helgithor@gmail.com",
+        "location": "Nuuk"
+    },
+    {
+        "kennitala": "0511042931",
+        "name": "John Oli",
+        "phone": "9991111",
+        "homePhone": "7817979",
+        "address": "hvammi 2",
+        "email": "jon@gmail.com",
+        "location": "Nuuk"
+    },
+    {
+        "kennitala": "0192837465",
+        "name": "Gr\u00e9tar m\u00e1r",
+        "phone": "1923746",
+        "homePhone": "1234569",
+        "address": "Jolutirg 1",
+        "email": "email@gmail.com",
+        "location": "Nuuk"
+    },
+    {
+        "kennitala": 123450,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 123451,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 123452,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 123453,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 123454,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 123455,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 123456,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 123457,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 123458,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 123459,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234510,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234511,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234512,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234513,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234514,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234515,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234516,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234517,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234518,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234519,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234520,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234521,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234522,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234523,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234524,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234525,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234526,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234527,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234528,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234529,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234530,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234531,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234532,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234533,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234534,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234535,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234536,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234537,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234538,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234539,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234540,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234541,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234542,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234543,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234544,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234545,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234546,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234547,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234548,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234549,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234550,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234551,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234552,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234553,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234554,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234555,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234556,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234557,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234558,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234559,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234560,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234561,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234562,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234563,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234564,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234565,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234566,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234567,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234568,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234569,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234570,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234571,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234572,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234573,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234574,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234575,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234576,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234577,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234578,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234579,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234580,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234581,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234582,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234583,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234584,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234585,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234586,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234587,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234588,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234589,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234590,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234591,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234592,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234593,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234594,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234595,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234596,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234597,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234598,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 1234599,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345100,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345101,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345102,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345103,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345104,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345105,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345106,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345107,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345108,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345109,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345110,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345111,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345112,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345113,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345114,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345115,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345116,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345117,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345118,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345119,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345120,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345121,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345122,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345123,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345124,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345125,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345126,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345127,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345128,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345129,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345130,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345131,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345132,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345133,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345134,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345135,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345136,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345137,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345138,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345139,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345140,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345141,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345142,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345143,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345144,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345145,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345146,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345147,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345148,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345149,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345150,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345151,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345152,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345153,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345154,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345155,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345156,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345157,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345158,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345159,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345160,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345161,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345162,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email": "john.doe@example.com",
+        "location": 101
+    },
+    {
+        "kennitala": 12345163,
+        "name": "John Doe",
+        "phone": "123-456-7890",
+        "homePhone": "098-765-4321",
+        "address": "123 Main Street",
+        "email"

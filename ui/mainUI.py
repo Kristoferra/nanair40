@@ -18,7 +18,6 @@ class mainUI(BaseUI):
         self.managerWorkOrderUI = ManagerWorkOrder(self.logicWrapper)
         self.janitorUI = JanitorUI(self.logicWrapper)
         self.searchUI = SearchUI(self.logicWrapper)
-    
 
 
 
@@ -183,10 +182,9 @@ class mainUI(BaseUI):
                return 'q'
 
 
-                    
-
-
+            
     def ShowSearchMenu(self) -> str | bool:
+
         optionInput = ''
         while optionInput.lower() != 'q':
             options = ['[E]mployee Search', '[P]roperty search', '[W]ork order search', '[R]eport search', '[C]ontractors']
@@ -216,8 +214,4 @@ class mainUI(BaseUI):
 
 
 
-
-
-mainUI = mainUI()
-mainUI.mainMenu()
 

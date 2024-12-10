@@ -14,6 +14,7 @@ class WorkOrder:
         self.priority: int = priority # 0 1 2
         self.workReport: list['WorkReport'] = workReport
         self.contractorID: int = contractorID # if it is -1 it is nobody if it is > -1 then it is an actual contrator
+        self.sentToManager: bool = sentToManager
         self.isCompleted: bool = isCompleted
         self.roomFacilityId: int = roomFacilityId
 

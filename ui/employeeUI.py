@@ -19,11 +19,10 @@ class EmployeeUI(SearchUI):
         fields = [
  # These are all of the keys, prompts, and values that we need to ask the user
             ('name', "Enter your name: ", validation.validateName),
-            ('phone', "Enter a phonenumber: ", validation.validatePhone),
-            ('homePhone', "Enter a homephone: ", validation.validatePhone),
-            ('address', "Enter a country: ", validation.validateText),
+            ('phone', "Enter a phone number (Has to be 7 numbers long): ", validation.validatePhone),
+            ('homePhone', "Enter a homephone (Has to be 7 numbers long): ", validation.validatePhone),
+            ('address', "Enter a address: ", validation.validateText),
             ('email', "Enter your email: ", validation.validateEmail),
-            ('location', "Enter your address: ", validation.validateText),
         ]
 
 # Ask the user for a kennitala until he enters a unique kennitala or quits or backs
@@ -45,9 +44,19 @@ class EmployeeUI(SearchUI):
                     return value.lower()
             userClass.__dict__[key] = value # add the key value pair to the instance
 
+        location = None
+        destinations = self.logicWrapper.listLocations()
+        employeeLocation =  self.takeInputAndPrintMenu('', ('Add property', [destination.airport for destination in destinations], 'choose a location')).capitalize()
+        while not location:
+            if employeeLocation.lower() in quitOrBack:
+                return employeeLocation.lower()
+            location = self.logicWrapper.listLocations(airport = employeeLocation)
+            if not location:
+                employeeLocation =  self.takeInputAndPrintMenu('', ('Add property', [destination.airport for destination in destinations], 'Please choose a location from the given options\nchoose a location: ')).capitalize()
+        userClass.__dict__['location'] = employeeLocation
 
         # Here a instance would get created in order to send to data layer
-        new_employee = Employee(userClass.__dict__['kennitala'], userClass.__dict__['name'], userClass.__dict__['phone'], userClass.__dict__['homePhone'], userClass.__dict__['location'], userClass.__dict__['email'], userClass.__dict__['address'])
+        new_employee = Employee(userClass.__dict__['kennitala'], userClass.__dict__['name'], userClass.__dict__['phone'], userClass.__dict__['homePhone'], userClass.__dict__['address'], userClass.__dict__['email'], userClass.__dict__['location'])
 
         self.logicWrapper.addEmployee(new_employee) # ask the logic wrapper to create the new employee the user entered
 
@@ -65,6 +74,8 @@ class EmployeeUI(SearchUI):
                 return lookUpKennitala.lower()
             
             employee = self.logicWrapper.listEmployees(kennitala=lookUpKennitala)  # Call the wrapper and check if a employee exists with the kennitala the user entered
+            if not employee:
+                lookUpKennitala = self.getValidInput("look for employee", "No employee in the system has this kennitala\nEnter ID: ", validation.validateKennitala)
 
         employee_list = [f'{key}: {value}' for key, value in list(employee[0].__dict__.items())[1:]] # create a list of key, value pairs from the employee the user asked for, we skip the first iteration that is kennitala
 
