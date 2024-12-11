@@ -28,5 +28,26 @@
         "date": "11.12.2024",
         "cost": 1,
         "comment": ""
+    },
+    {
+        "id": 32,
+        "workOrderID": 1,
+        "description": "test",
+        "contractorID": 1,
+        "employeeID": 1,
+        "date": "12.12.2024",
+        "cost": 500,
+        "comment": "test"
+    },
+    {
+        "id": 32,
+        "workOrderID": 1,
+        "description": "test",
+        "contractorID": 1,
+        "employeeID": 1,
+        "date": "12.12.2024",
+        "cost": 500,
+        "comment": "test",
+        "isCompleted": true
     }
 ]

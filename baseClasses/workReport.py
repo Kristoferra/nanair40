@@ -11,7 +11,7 @@ class WorkReport:
         self.date: str = date
         self.cost: int = cost
         self.comment: str = comment
-        isCompleted: bool = isCompleted
+        self.isCompleted: bool = isCompleted
 
 
     def __repr__(self) -> str:
