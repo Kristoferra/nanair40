@@ -7,7 +7,8 @@
         "userID": 0,
         "priority": "now",
         "workReport": [],
-        "contractorID": "9",
+        "contractorID": -1,
+        "sentToManager": false,
         "isCompleted": false,
         "roomFacilityId": "h1",
         "repeating": false,
@@ -16,16 +17,24 @@
     {
         "id": 6,
         "date": "",
-        "description": "wifeoiwefoiwfe",
-        "propertyNumber": "p202",
-        "userID": "0511042930",
-        "priority": "as soon as possible",
+        "description": "nowdncwoicwoic",
+        "propertyNumber": "120",
+        "userID": 0,
+        "priority": "now",
         "workReport": [],
-        "contractorID": 1,
+        "contractorID": -1,
         "sentToManager": false,
         "isCompleted": false,
-        "roomFacilityId": "r102",
+        "roomFacilityId": "r1",
         "repeating": false,
         "repeatInterval": 0
-    }
-]
+    },
+    {
+        "id": 7,
+        "date": "",
+        "description": "cmopremcioeer",
+        "propertyNumber": "120",
+        "userID": "0511042930",
+        "priority": "as soon as possible",
+        "workReport": [
+            

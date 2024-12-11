@@ -96,12 +96,13 @@ class WorkOrderHandler:
                 if str(v) != str(workOrder[i].__dict__[k]):
                     del workOrder[i]
 
+        newWorkOrder = []
         for index, instance in enumerate(workOrder):
-            if int(instance.userID) == 0:
-                del workOrder[index]
+            if int(instance.userID) != 0:
+                newWorkOrder.append(instance)
 
 
-        return workOrder
+        return newWorkOrder
 
 
     def listRepeatingWorkOrders(self, **kwargs) -> list[WorkOrder]:

@@ -12,3 +12,4 @@ contractors id only work on strings but when adding a new contractor into the sy
 how often task needs to happen reaccuring
 Be able to change who did work in work report and not work order if person gets sick for example
 Priorities as ints and not strings
+ManagerWorkOrder to be changed repeatInterval
