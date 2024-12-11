@@ -27,6 +27,9 @@ class ContractorController:
         try:
             with open(self.filePath, "r") as f:
                 currentData = json.load(f)
+        except:
+            currentData = []
+        try:
             dataJSON = self.contractor.toJSON(data)
             currentData.append(json.loads(dataJSON))
 
@@ -40,7 +43,9 @@ class ContractorController:
         try:
             with open(self.filePath, "r") as f:
                 currentData = json.load(f)
-
+        except:
+            currentData = []
+        try:
             for contractor in currentData:
                 if contractor.get(entry) == entryValue:
                     for key, value in kwargs.items():
@@ -57,7 +62,10 @@ class ContractorController:
 
 
     def readFile(self) -> list['Contractor']:
-        data = []
-        with open(self.filePath, "r") as f:
-            data = json.load(f)
-        return self.contractor.normalize(data)
+        try:
+            data = []
+            with open(self.filePath, "r") as f:
+                data = json.load(f)
+            return self.contractor.normalize(data)
+        except:
+            return []

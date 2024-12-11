@@ -1,31 +1,16 @@
 [
     {
-        "id": 5,
-        "date": "",
-        "description": "Hot tub",
+        "id": 0,
+        "date": "11.12.2024",
+        "description": "testing",
         "propertyNumber": "120",
         "userID": 0,
         "priority": "now",
         "workReport": [],
         "contractorID": "9",
         "isCompleted": false,
-        "roomFacilityId": "h1",
-        "repeating": false,
-        "repeatInterval": 0
-    },
-    {
-        "id": 6,
-        "date": "",
-        "description": "wifeoiwefoiwfe",
-        "propertyNumber": "p202",
-        "userID": "0511042930",
-        "priority": "as soon as possible",
-        "workReport": [],
-        "contractorID": 1,
-        "sentToManager": false,
-        "isCompleted": false,
-        "roomFacilityId": "r102",
-        "repeating": false,
-        "repeatInterval": 0
+        "roomFacilityId": "r1",
+        "repeating": true,
+        "repeatInterval": 1
     }
 ]

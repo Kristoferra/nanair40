@@ -13,7 +13,10 @@ class JanitorUI(SearchUI):
 
 
     def workOrders(self):
+        self.logicWrapper.checkRepeatingWorkOrders()
         filter = self.takeInputAndPrintMenu(['P', 'A'], ('Work orders', ['Property', 'All work orders'], 'Choose what you would like to filter by: '))
+        if filter.lower() in quitOrBack:
+            return filter.lower()
         match filter.lower():
             case 'p':
                 property = []
@@ -42,10 +45,12 @@ class JanitorUI(SearchUI):
         workOrderIdList = [str(instance.id) for instance in currentWorkOrders] # Get all id's of the current work orders
 
         userOrderId = ''
+        prompt = 'Choose a ID to work on: '
         while userOrderId not in workOrderIdList: # while loop continues and keeps asking the user for a ID until the user enters a ID that isa available 
-            userOrderId = self.takeInputAndPrintMenuWithoutBrackets('', ("Work Orders", body, 'Choose a ID to work on: '))
+            userOrderId = self.takeInputAndPrintMenuWithoutBrackets('', ("Work Orders", body, prompt))
             if userOrderId.lower() in quitOrBack:
                 return userOrderId
+            prompt = 'Please choose a ID from the options above\nChoose a ID to work on: '
 
         employeeId = ''
         lookUpkennitala = self.takeInputAndPrintMenuWithoutBrackets('', ("Work Orders", body, 'Enter a employee kennitala to asign the work order to: '))
@@ -71,6 +76,8 @@ class JanitorUI(SearchUI):
     def addWorkReport(self) -> str:
         '''Lists all work orders that are not complete and have been signed to a employee, the user is asked for what work report he wants to work, user writes a work report on that work order and then returns'''
         filter = self.takeInputAndPrintMenu(['P', 'A'], ('Work orders', ['Property', 'All work orders'], 'List work orders that you can create a report on\nChoose what you would like to filter by: '))
+        if filter.lower() in quitOrBack:
+            return filter.lower()
         match filter.lower():
             case 'p':
                 property = []
@@ -80,9 +87,13 @@ class JanitorUI(SearchUI):
                     lookUpProperty = self.showPropertyInfo(propertyList, '', prompt)
                     property = self.logicWrapper.listProperties(id = lookUpProperty)
                     prompt = 'Please enter a property number from the options above\nEnter a property number you would like to see work orders from: '
-                currentWorkOrders = self.logicWrapper.listWorkCurrentWorkOrders(isCompleted = False, propertyNumber = lookUpProperty)
+                currentWorkOrders = self.logicWrapper.listWorkCurrentWorkOrders(isCompleted = False, propertyNumber = lookUpProperty, sentToManager = False)
+
             case 'a':
-                currentWorkOrders = self.logicWrapper.listWorkCurrentWorkOrders(isCompleted = False)
+                currentWorkOrders = self.logicWrapper.listWorkCurrentWorkOrders(isCompleted = False, sentToManager = False)
+
+
+
 
 
         body = self.showWorkOrders(currentWorkOrders) # call the show work orders function and get a string of all work orders and theit info
@@ -92,16 +103,19 @@ class JanitorUI(SearchUI):
 
 
         WorkOrderId = ''
+        prompt = 'Choose a Work order to make a report on: '
         # the user is asked for a work ID until her enters a id that is on of the ids that the logic layer gives
         while WorkOrderId not in availableWorkOrderIds: 
             # ask the user for an id until he enters an id in the list
-            WorkOrderId =  self.takeInputAndPrintMenu('', ('Create a work report', body, 'Choose a Work order to make a report on: '))
+            WorkOrderId =  self.takeInputAndPrintMenu('', ('Create a work report', body, prompt))
             if WorkOrderId.lower() in quitOrBack: # if user enters to quit or go back, we return that
                 return WorkOrderId.lower()
+            prompt = 'Please pick a work order ID from the options above\nChoose a Work order to make a report on: '
         
         workOrder = self.logicWrapper.listWorkOrders(id = WorkOrderId) # get all work orders listed to the id
         employee = self.logicWrapper.listEmployees(kennitala = workOrder[0].userID) # get the epmloyee that is assigned to the work order
         now = datetime.now()
+        now = now.strftime("%d.%m.%Y")
         # create a dictionary that keeps track of all values the user enters in related to the dict
         workReportDict = {'Work order id': WorkOrderId, 'Empbloyee': employee[0].name, 'date': now, 'Description': '', 'contractor': '---','cost': ''}
 
@@ -126,9 +140,8 @@ class JanitorUI(SearchUI):
 
         # create a work report instance that will be sent down to logic layer and then stored in a json file
         WorkOrderId = int(WorkOrderId)
-        now = now.strftime("%d.%m.%Y")
-        workReportID: int = self.logicWrapper.currentWorkReportID(WorkOrderId)
-        WorkReportInstance = WorkReport(workReportID, WorkOrderId, workReportDict['Description'], int(workOrder[0].contractorID), workOrder[0].userID, int(workReportDict['cost']))
+        workReportID: int = self.logicWrapper.currentWorkReportID()
+        WorkReportInstance = WorkReport(workReportID, WorkOrderId, workReportDict['Description'], int(workOrder[0].contractorID), workOrder[0].userID, now, int(workReportDict['cost']), workOrder[0].propertyNumber)
         workReportDict['cost'] += 'Kr'
         self.logicWrapper.addWorkReport(WorkReportInstance)
 

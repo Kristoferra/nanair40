@@ -1,15 +1,34 @@
 from baseClasses.Employee import Employee
-from dataControl.employeeController import EmployeeController
 from typing import Any
 
 
 class EmployeeHandler:
-    def __init__(self) -> None:
-        self.employeeControl = EmployeeController()
+    def __init__(self, dataWrapper=None) -> None:
+        self.dataWrapper = dataWrapper
         self.employee = Employee()
 
     def addEmployee(self, employee: 'Employee') -> bool:
-        return self.employeeControl.appendIntoFile(employee)
+        # https://www.quora.com/What-is-maximum-and-minimum-length-of-any-mobile-number-across-the-world
+        # logic layer checking, here the data is confirmed to be true from UI layer, if not false is returned
+        if not type(employee.kennitala) == str:
+            return False
+        if not employee.kennitala.isdigit():
+            return False
+        if len(str(employee.kennitala)) != 10:
+            return False
+        if self.listEmployes(kennitala=employee.kennitala):
+            return False
+        
+        if type(employee.phone) != str:
+            return False
+        if len(employee.phone) < 7 or len(employee.phone) > 15:
+            return False
+        if type(employee.homePhone) != str:
+            return False
+        if len(employee.homePhone) < 7 or len(employee.homePhone) > 15:
+            return False
+
+        return self.dataWrapper.employeeInsert(employee)
 
 
     def editEmployee(self, entry: str, entryValue: Any, **kwargs) -> bool:
@@ -17,14 +36,35 @@ class EmployeeHandler:
             return False
         if any(kwarg not in vars(self.employee) for kwarg in kwargs):
             return False
-        return self.employeeControl.changeOneEntry(entry, entryValue, **kwargs)
+        # https://www.quora.com/What-is-maximum-and-minimum-length-of-any-mobile-number-across-the-world
+        if entry == "kennitala":
+            if not entryValue.isdigit():
+                return False
+            if len(str(entryValue)) != 10:
+                return False
+            if not self.listEmployes(kennitala=entryValue):
+                return False
+        
+        if entry == "phone":
+            if type(entry) != str:
+                return False
+            if len(entry) < 7 or len(entry) > 15:
+                return False
+        
+        if entry == "homePhone":
+            if type(entry) != str:
+                return False
+            if len(entry) < 7 or len(entry) > 15:
+                return False
+
+        return self.dataWrapper.employeeChange(entry, entryValue, **kwargs)
 
 
     def listEmployes(self, **kwargs) -> list['Employee']:
         if any(kwarg not in vars(self.employee) for kwarg in kwargs):
             return []
 
-        employees: list['Employee'] = self.employeeControl.readFile()
+        employees: list['Employee'] = self.dataWrapper.employeeFetch()
         if not len(kwargs):
             return employees
 

@@ -1,53 +1,14 @@
 [
     {
-        "id": 4,
-        "workOrderID": 8,
-        "description": "rfrfrefwef",
-        "contractorID": -1,
-        "employeeID": "11.12.2024",
-        "date": 333,
-        "cost": 0,
-        "comment": ""
-    },
-    {
         "id": 1,
-        "workOrderID": 6,
-        "description": "QNQwxhqowedheodihwe",
-        "contractorID": 1,
-        "employeeID": "0511042930",
-        "date": "11.12.2024",
-        "cost": 12000,
-        "comment": ""
-    },
-    {
-        "id": 1,
-        "workOrderID": 5,
-        "description": "wecewcewc",
+        "workOrderID": 0,
+        "description": "testing43",
         "contractorID": -1,
-        "employeeID": "0511042930",
+        "employeeID": "2707046969",
         "date": "11.12.2024",
-        "cost": 1,
-        "comment": ""
-    },
-    {
-        "id": 32,
-        "workOrderID": 1,
-        "description": "test",
-        "contractorID": 1,
-        "employeeID": 1,
-        "date": "12.12.2024",
         "cost": 500,
-        "comment": "test"
-    },
-    {
-        "id": 32,
-        "workOrderID": 1,
-        "description": "test",
-        "contractorID": 1,
-        "employeeID": 1,
-        "date": "12.12.2024",
-        "cost": 500,
-        "comment": "test",
-        "isCompleted": true
+        "propertyNumber": "120",
+        "comment": "",
+        "isCompleted": false
     }
 ]

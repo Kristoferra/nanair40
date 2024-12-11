@@ -1,15 +1,14 @@
 from baseClasses.Contractor import Contractor
-from dataControl.contractorController import ContractorController
 from typing import Any
 
 
 class ContractorHandler:
-    def __init__(self) -> None:
-        self.contractorControl = ContractorController()
+    def __init__(self, dataWrapper=None) -> None:
+        self.dataWrapper = dataWrapper
         self.contractor = Contractor()
 
     def addContractor(self, contractor: 'Contractor') -> bool:
-        return self.contractorControl.appendIntoFile(contractor)
+        return self.dataWrapper.contractorInsert(contractor)
 
 
     def editContractor(self, entry: str, entryValue: Any, **kwargs) -> bool:
@@ -17,14 +16,14 @@ class ContractorHandler:
             return False
         if any(kwarg not in vars(self.contractor) for kwarg in kwargs):
             return False
-        return self.contractorControl.changeOneEntry(entry, entryValue, **kwargs)
+        return self.dataWrapper.contractorChange(entry, entryValue, **kwargs)
 
 
     def listContractors(self, **kwargs) -> list['Contractor']:
         if any(kwarg not in vars(self.contractor) for kwarg in kwargs):
             return []
 
-        contractors: list['Contractor'] = self.contractorControl.readFile()
+        contractors: list['Contractor'] = self.dataWrapper.contractorFetch()
         if not len(kwargs):
             return contractors
 

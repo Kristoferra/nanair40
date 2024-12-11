@@ -44,7 +44,9 @@ class WorkController:
         try:
             with open(self.filePath, "r") as f:
                 currentData = json.load(f)
-
+        except:
+            currentData = []
+        try:
             for workOrder in currentData:
                 if workOrder.get(entry) == entryValue:
                     for key, value in kwargs.items():
@@ -61,7 +63,10 @@ class WorkController:
 
 
     def readFile(self) -> list['WorkOrder']:
-        data = []
-        with open(self.filePath, "r") as f:
-            data = json.load(f)
-        return self.workOrder.normalize(data) 
+        try:
+            data = []
+            with open(self.filePath, "r") as f:
+                data = json.load(f)
+                return self.workOrder.normalize(data) 
+        except:
+            return []

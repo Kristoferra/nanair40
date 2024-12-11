@@ -27,6 +27,9 @@ class LocationController:
         try:
             with open(self.filePath, "r") as f:
                 currentData = json.load(f)
+        except:
+            currentData = []
+        try:
             dataJSON = self.location.toJSON(data)
             currentData.append(json.loads(dataJSON))
 
@@ -40,7 +43,9 @@ class LocationController:
         try:
             with open(self.filePath, "r") as f:
                 currentData = json.load(f)
-
+        except:
+            currentData = []
+        try:
             for location in currentData:
                 if location.get(entry) == entryValue:
                     for key, value in kwargs.items():
@@ -57,7 +62,10 @@ class LocationController:
 
 
     def readFile(self) -> list['Location']:
-        data = []
-        with open(self.filePath, "r") as f:
-            data = json.load(f)
-        return self.location.normalize(data)
+        try:
+            data = []
+            with open(self.filePath, "r") as f:
+                data = json.load(f)
+            return self.location.normalize(data)
+        except:
+            return []

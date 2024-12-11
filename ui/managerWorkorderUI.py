@@ -3,6 +3,7 @@ from ui.baseUI import BaseUI
 from ui.validationUI import ValidationUI
 from ui.searchUI import SearchUI
 from baseClasses.workOrder import WorkOrder
+from datetime import datetime
 
 validation = ValidationUI()
 AVAILABLE_EDIT_OPTIONS = ['description', 'property number', 'priority', 'contractor', 'room id']
@@ -13,7 +14,7 @@ class ManagerWorkOrder(SearchUI):
     def __init__(self, logicWrapper: Logic_Wrapper):
         self.logicWrapper = logicWrapper
 
-    def addNewWorkOrder(self):
+    def addNewWorkOrder(self) -> str:
         body = []
         Userdescription = self.takeInputAndPrintMenuWithoutBrackets('', ('Create work order', '', 'Description of work order: ')) # Get a description on what needs to be done
         if Userdescription in quirOrBack:
@@ -93,12 +94,23 @@ class ManagerWorkOrder(SearchUI):
         if isRecuring.lower() == "y":
             repeating = True
         if repeating:
-            self.takeInputAndPrintMenu(["D", "W", "M", "Y"], ("Create a work order", ["[D]aily", "[W]eekly", "[M]onthly", "[Y]early"], "Choose option: "))
-            repeatInterval = 2 # to be changed
+            repeatIntervalStr = self.takeInputAndPrintMenu(["D", "W", "M", "Y"], ("Create a work order", ["[D]aily", "[W]eekly", "[M]onthly", "[Y]early"], "Choose option: "))
+            match repeatIntervalStr.upper():
+                case "D":
+                    repeatInterval = 1
+                case "W":
+                    repeatInterval = 2
+                case "M":
+                    repeatInterval = 3
+                case "Y":
+                    repeatInterval = 4
+                case _:
+                    return repeatIntervalStr
 
-
-        self.logicWrapper.currentWorkOrderID+=1
-        workOrderInstance = WorkOrder(id=self.logicWrapper.currentWorkOrderID, description=Userdescription, propertyNumber=lookUpPropertyNumber, priority = userPriority, contractorID=int(lookUpContractor), roomFacilityId= managerRoomFacilityId, repeating=repeating, repeatInterval=repeatInterval)
+        now = datetime.now()
+        now = now.strftime("%d.%m.%Y")
+ 
+        workOrderInstance = WorkOrder(id=self.logicWrapper.currentWorkOrderID, description=Userdescription, date=now, propertyNumber=lookUpPropertyNumber, priority = userPriority, contractorID=int(lookUpContractor), roomFacilityId= managerRoomFacilityId, repeating=repeating, repeatInterval=repeatInterval)
 
 
         self.logicWrapper.addWorkOrder(workOrderInstance)
@@ -110,7 +122,7 @@ class ManagerWorkOrder(SearchUI):
 
 
 
-    def editWorkOrder(self):
+    def editWorkOrder(self) -> str:
          # Getting all work orders that an employee has not assigned himself too
 
         WorkOrder = None
@@ -195,11 +207,33 @@ class ManagerWorkOrder(SearchUI):
         return self.takeInputAndPrintMenu(['Quit', 'Back'], (f'Create work order', [f'{key}: {value}' for key, value in workOrderDict.items()], f'Work order information has been succesfully updated!\nChoose a option: '))
 
 
-    def completedWorkOrder(self):
-        uncomplete: list = self.logicWrapper.listWorkReports(isCompleted=False)
-        body = self.showWorkReports(uncomplete)
-        retVal = self.takeInputAndPrintMenuWithoutBrackets([], ('Complete work reports', body, 'Choose a work report you want to mark as finished!\nVhoose a option:'))
-        for unc in uncomplete:
-            if retVal == str(unc.id):
-                pass
+    def completedWorkOrder(self) -> str:
+        uncompleteList: list = self.logicWrapper.listWorkReports(isCompleted=False)
+        body = self.showWorkReports(uncompleteList)
+
+        if not body:
+            return self.takeInputAndPrintMenuWithoutBrackets(['Quit', 'Back'], (f'Create work order', ['There are no work orders you can currently mark as complete!'], f'Choose a option: '))
+        uncompleteIdList = [str(instance.id) for instance in uncompleteList]
+
+        retVal = ''
+        prompt = 'Choose a work report ID you want to mark as finished\nChoose a option: '
+        while retVal not in uncompleteIdList:
+            retVal = self.takeInputAndPrintMenuWithoutBrackets([], ('Complete work reports', body, prompt)) 
+            if retVal.lower() in quirOrBack:
+                return retVal.lower()
+            prompt = 'Choose a work report ID you want to mark as finished\nPlease choose a ID from the available work reports: '
+
+        workReport = self.logicWrapper.listWorkReports(id = retVal)
+        additionalComment = self.takeInputAndPrintMenuWithoutBrackets([], ('Complete work reports', body, 'Add a additional comment: '))
+
+        self.logicWrapper.editWorkReports(entry='id', entryValue = int(retVal), isCompleted = True)
+        self.logicWrapper.editWorkReports(entry='id', entryValue = int(retVal), comment = additionalComment)
+
+        self.logicWrapper.editWorkOrder(entry='id', entryValue=workReport[0].workOrderID, isCompleted = True)
+
+        return self.takeInputAndPrintMenuWithoutBrackets(['Quit', 'Back'], (f'Create work order', [f'Work report {workReport[0].id} has been marked as complete!'], f'Choose a option: '))
+
+
+
+
 

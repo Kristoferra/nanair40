@@ -1,5 +1,4 @@
 from baseClasses.workReport import WorkReport
-from dataControl.workReportController import WorkReportController
 from typing import Any
 from datetime import datetime
 
@@ -13,12 +12,12 @@ def is_date_in_range(check_date_str, start_date_str, end_date_str):
 
 
 class WorkReportHandler:
-    def __init__(self) -> None:
-        self.workReportControl = WorkReportController()
+    def __init__(self, dataWrapper=None) -> None:
+        self.dataWrapper = dataWrapper
         self.workReport = WorkReport()
 
     def addWorkReport(self, work: 'WorkReport') -> bool:
-        return self.workReportControl.appendIntoFile(work)
+        return self.dataWrapper.workReportInsert(work)
 
     def editWorkReport(self, entry: str, entryValue: Any, **kwargs) -> bool:
         if not len(kwargs):
@@ -26,14 +25,14 @@ class WorkReportHandler:
         if any(kwarg not in vars(self.workReport) for kwarg in kwargs):
             return False
         
-        return self.workReportControl.changeOneEntry(entry, entryValue, **kwargs)
+        return self.dataWrapper.workReportChange(entry, entryValue, **kwargs)
 
 
     def listWorkReports(self, **kwargs) -> list['WorkReport']:
         if any(kwarg not in vars(self.workReport) for kwarg in kwargs):
             return []
 
-        workReports: list['WorkReport'] = self.workReportControl.readFile()
+        workReports: list['WorkReport'] = self.dataWrapper.workReportFetch()
         if not len(kwargs):
             return workReports
 
@@ -50,8 +49,8 @@ class WorkReportHandler:
 
         return workReports
 
-    def currentWorkReportID(self, workOrderID: int) -> int:
-        workReports: list['WorkReport'] = self.listWorkReports(workOrderID=workOrderID)
+    def currentWorkReportID(self) -> int:
+        workReports: list['WorkReport'] = self.listWorkReports()
         if not len(workReports):
             return 1
 

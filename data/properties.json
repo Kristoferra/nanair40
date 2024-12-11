@@ -1,115 +1,15 @@
 [
     {
-        "id": "0",
-        "location": "nuuk",
-        "address": "hjalv 5",
-        "condition": "fair",
-        "facilitiesMaintenance": "Hot tub needs fixing",
-        "rooms": {
-            "r1": "room 1",
-            "r2": "room 2"
-        },
-        "facilities": {
-            "h1": "hot tub"
-        }
-    },
-    {
-        "id": "122000",
-        "location": "9",
-        "address": "hjammi",
-        "condition": "good",
-        "facilitiesMaintenance": "hot utb needs fixibnf",
-        "rooms": {
-            "r1": "room 1",
-            "r2": "room 2",
-            "r102": "room 3",
-            "r104": "room 4"
-        },
-        "facilities": {
-            "h1": "Hot tub",
-            "s1": "Sauna",
-            "b1": "bathroomMaster"
-        }
-    },
-    {
         "id": "120",
-        "location": "iceland",
-        "address": "hjallli5",
-        "condition": "poor",
-        "facilitiesMaintenance": "Hot tub DOES NEED FIXING",
-        "rooms": {
-            "r1": "room 1",
-            "r2": "room 2",
-            "r3": "room 3",
-            "r4": "room 4",
-            "r5": "room 5"
-        },
-        "facilities": {
-            "h1": "Hot tub",
-            "s1": "Sauna",
-            "b1": "Backroom"
-        }
-    },
-    {
-        "id": "120000",
-        "location": "3",
-        "address": "hvam i show",
-        "condition": "excellent",
-        "facilitiesMaintenance": "sink is broken in bathroom",
-        "rooms": {
-            "r-101": "room 1",
-            "r102": "room 2"
-        },
-        "facilities": {
-            "f-1": "front desk",
-            "s1": "swimming pool"
-        }
-    },
-    {
-        "id": "F11100",
-        "location": "9",
-        "address": "condition",
-        "condition": "poor",
-        "facilitiesMaintenance": "Sink is broken down stairs",
-        "rooms": {
-            "r101": "room 1",
-            "r102": "room 2",
-            "r103": "room 3"
-        },
-        "facilities": {
-            "h1": "hot tub",
-            "f1": "front desk"
-        }
-    },
-    {
-        "id": "P000",
-        "location": "3",
-        "address": "ascnKAC",
-        "condition": "GOOD",
-        "facilitiesMaintenance": "hot tub needs fixing",
-        "rooms": {
-            "r101": "room 1",
-            "r102": "room 2"
-        },
-        "facilities": {
-            "f101": "fron desk",
-            "h1": "hot tub"
-        }
-    },
-    {
-        "id": "p202",
         "location": "Nuuk",
-        "address": "idcowecioew",
+        "address": "test 12",
         "condition": "good",
-        "facilitiesMaintenance": "ekkert",
+        "facilitiesMaintenance": "hottub",
         "rooms": {
-            "r101": "room 1",
-            "r102": "room 2"
+            "r1": "room 1"
         },
         "facilities": {
-            "f1": "front desk",
-            "h1": "how tub",
-            "s1": "swimming pool"
+            "1": "hottub"
         }
     }
 ]

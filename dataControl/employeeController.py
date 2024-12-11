@@ -27,6 +27,9 @@ class EmployeeController:
         try:
             with open(self.filePath, "r") as f:
                 currentData = json.load(f)
+        except:
+            currentData = []
+        try:
             dataJSON = self.employee.toJSON(data)
             currentData.append(json.loads(dataJSON))
 
@@ -40,7 +43,9 @@ class EmployeeController:
         try:
             with open(self.filePath, "r") as f:
                 currentData = json.load(f)
-
+        except:
+            currentData = []
+        try:
             for employee in currentData:
                 if employee.get(entry) == entryValue:
                     for key, value in kwargs.items():
@@ -57,7 +62,10 @@ class EmployeeController:
 
 
     def readFile(self) -> list['Employee']:
-        data = []
-        with open(self.filePath, "r") as f:
-            data = json.load(f)
-        return self.employee.normalize(data)
+        try:
+            data = []
+            with open(self.filePath, "r") as f:
+                data = json.load(f)
+            return self.employee.normalize(data)
+        except:
+            return []

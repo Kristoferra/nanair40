@@ -111,7 +111,7 @@ class BaseUI:
 
     def takeInputAndPrintMenu(self, possibilites: list, menuInformation: tuple) -> str:
         '''Asks the user a option based on the option list entered, it prints the baseMenuScreen after every one guess, the menu screen is determained by the second argument, when the user enters a available option, then that option is returned'''
-    
+        error = False
         options_list = self.available_options(possibilites) 
 
         while True:
@@ -152,7 +152,10 @@ Choose a option:''', end='')
         
     def getValidInput(self, name, prompt, validationFunc, userDict: dict = {}) -> str:
         while True:
-            self.printBaseMenu(name, [f'{key}: {value if value else ''}' for key, value in userDict.items()], prompt)
+            if error:
+                prompt = errorMessage + prompt
+                errorMessage = ''
+            self.printBaseMenuNoBrackets(name, [f'{key}: {value if value else ''}' for key, value in userDict.items()], prompt)
             user_input = input(' ')
         
             if validationFunc(user_input):

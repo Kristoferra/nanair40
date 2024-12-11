@@ -41,7 +41,6 @@ class ContractorsUI(SearchUI):
             contractorClass.__dict__[key] = value
         
         # contractor isntance is created
-        self.logicWrapper.currentContractorID+=1
         newContractor = Contractor(self.logicWrapper.currentContractorID, contractorClass.__dict__["name"], contractorClass.__dict__["phone"], contractorClass.__dict__["openingHours"], contractorClass.__dict__["location"])
 
         # contractor instance sent to the logic layer where its then stored in a json file

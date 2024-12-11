@@ -1,15 +1,14 @@
 from baseClasses.Location import Location
-from dataControl.locationController import LocationController
 from typing import Any
 
 
 class LocationHandler:
-    def __init__(self) -> None:
-        self.locationControl = LocationController()
+    def __init__(self, dataWrapper=None) -> None:
+        self.dataWrapper = dataWrapper
         self.location = Location()
 
     def addLocation(self, location: 'Location') -> bool:
-        return self.locationControl.appendIntoFile(location)
+        return self.dataWrapper.locationInsert(location)
 
 
     def editLocation(self, entry: str, entryValue: Any, **kwargs) -> bool:
@@ -17,14 +16,14 @@ class LocationHandler:
             return False
         if any(kwarg not in vars(self.location) for kwarg in kwargs):
             return False
-        return self.locationControl.changeOneEntry(entry, entryValue, **kwargs)
+        return self.dataWrapper.locationChange(entry, entryValue, **kwargs)
 
 
     def listLocations(self, **kwargs) -> list['Location']:
         if any(kwarg not in vars(self.location) for kwarg in kwargs):
             return []
 
-        locations: list['Location'] = self.locationControl.readFile()
+        locations: list['Location'] = self.dataWrapper.locationFetch()
         if not len(kwargs):
             return locations
 

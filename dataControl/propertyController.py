@@ -27,6 +27,9 @@ class PropertyController:
         try:
             with open(self.filePath, "r") as f:
                 currentData = json.load(f)
+        except:
+            currentData = []
+        try:
             dataJSON = self.property.toJSON(data)
             currentData.append(json.loads(dataJSON))
 
@@ -40,7 +43,9 @@ class PropertyController:
         try:
             with open(self.filePath, "r") as f:
                 currentData = json.load(f)
-
+        except:
+            currentData = []
+        try:
             for property in currentData:
                 if property.get(entry) == entryValue:
                     for key, value in kwargs.items():
@@ -57,7 +62,10 @@ class PropertyController:
 
 
     def readFile(self) -> list['Property']:
-        data = []
-        with open(self.filePath, "r") as f:
-            data = json.load(f)
-        return self.property.normalize(data)
+        try:
+            data = []
+            with open(self.filePath, "r") as f:
+                data = json.load(f)
+            return self.property.normalize(data)
+        except:
+            return []

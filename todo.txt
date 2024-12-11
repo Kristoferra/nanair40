@@ -1,15 +1,18 @@
-Add list of possible locations in BaseClasses prob for example 2 towns in Greenland
-Logic wrapper checks if kennitala already exists in the system
-When program closes in the middle of writing it should persist what was written
-For loop for first letter - Helgi next week as he says
 check if all chars user inputed are in whitelist!!!!
 ADD MORE VALIDATION TO LOGIC LAYER, EXAMPLE WHEN CREATING A EMPLOYEE IF THE KENNITALA IS ALREADY IN USE OR THAT THE LOCATION ENTERED EXISTS AND SO ON
 something seems to be wrong with the list property function when assigning a id
 make the system assign ID to workOrders 
-contractors id only work on strings but when adding a new contractor into the system it gets written as a int
 
 
-how often task needs to happen reaccuring
 Be able to change who did work in work report and not work order if person gets sick for example
-Priorities as ints and not strings
 ManagerWorkOrder to be changed repeatInterval
+
+
+COULD MOVE NORMALIZE AND TOJSON TO ONE FILE THAT IS BEING INHERETED
+ON EVERY RUN REMOVE TMP FILES
+
+
+DATE SEARCH
+REPEATING
+replace dateutil to use datetime
+FIX KENNITALA SEARCH

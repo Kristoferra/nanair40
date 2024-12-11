@@ -1,47 +1,11 @@
 [
     {
-        "kennitala": 32,
-        "name": "Sven Jonsson",
-        "phone": "+3545678901",
-        "homePhone": "+3545432109",
-        "address": "654 Pine Ave, Kopavogur",
-        "email": "sven.jonsson@example.com",
-        "location": "Reykjav\u00edk"
-    },
-    {
-        "kennitala": "6789012345",
-        "name": "Hanna Thoroddsen",
-        "phone": "+3546789012",
-        "homePhone": "+3544321098",
-        "address": "987 Cedar Blvd, Mosfellsbaer",
-        "email": "hanna.thoroddsen@example.com",
-        "location": 1
-    },
-    {
-        "kennitala": "7890123456",
-        "name": "bjorn gretar",
-        "phone": "+3547890123",
-        "homePhone": "+3543210987",
-        "address": "135 Maple Rd, Isafjordur",
-        "email": "bjorn.rognvaldsson@example.com",
-        "location": 1
-    },
-    {
-        "kennitala": "0511042930",
-        "name": "bcdjjdwkcbnjwek",
-        "phone": "7769922",
-        "homePhone": "0000000",
-        "address": "HJALLALAUT",
-        "email": "helgi@gmail.com",
-        "location": "3"
-    },
-    {
-        "kennitala": "0511042980",
-        "name": "John Miles",
-        "phone": "7768888",
-        "homePhone": "2221111",
-        "address": "Malbew Road",
-        "email": "newEmail@gmail.com",
-        "location": "1"
+        "kennitala": "2707046969",
+        "name": "Milan",
+        "phone": "7696969",
+        "homePhone": "7696969",
+        "address": "test 14",
+        "email": "test@test.test",
+        "location": "Nuuk"
     }
 ]

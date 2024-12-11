@@ -1,15 +1,14 @@
 from baseClasses.Property import Property
-from dataControl.propertyController import PropertyController
 from typing import Any
 
 
 class PropertyHandler:
-    def __init__(self) -> None:
-        self.propertyControl = PropertyController()
+    def __init__(self, dataWrapper=None) -> None:
+        self.dataWrapper = dataWrapper
         self.property = Property()
 
     def addProperty(self, property: 'Property') -> bool:
-        return self.propertyControl.appendIntoFile(property)
+        return self.dataWrapper.propertyInsert(property)
 
 
     def editProperty(self, entry: str, entryValue: Any, **kwargs) -> bool:
@@ -17,14 +16,14 @@ class PropertyHandler:
             return False
         if any(kwarg not in vars(self.property) for kwarg in kwargs):
             return False
-        return self.propertyControl.changeOneEntry(entry, entryValue, **kwargs)
+        return self.dataWrapper.propertyChange(entry, entryValue, **kwargs)
 
 
     def listProperties(self, **kwargs) -> list['Property']:
         if any(kwarg not in vars(self.property) for kwarg in kwargs):
             return []
 
-        properties: list['Property'] = self.propertyControl.readFile()
+        properties: list['Property'] = self.dataWrapper.propertyFetch()
         if not len(kwargs):
             return properties
 
