@@ -3,8 +3,13 @@ from baseClasses.workOrder import WorkOrder
 from baseClasses.workReport import WorkReport
 from logic.logicWrapper import Logic_Wrapper
 from ui.searchUI import SearchUI
+from ui.validationUI import ValidationUI
+from datetime import datetime
+from baseClasses.workReport import WorkReport
 import os
+
 quitOrBack = ['q', 'b']
+validation = ValidationUI()
 
 class JanitorUI(SearchUI):
     def __init__(self, logicWrapper: Logic_Wrapper):
@@ -54,14 +59,13 @@ class JanitorUI(SearchUI):
         employeeId = ''
         lookUpkennitala = self.takeInputAndPrintMenuWithoutBrackets('', ("Work Orders", body, 'Enter a employee kennitala to asign the work order to: '))
         while not employeeId:
-            lookUpkennitala = self.takeInputAndPrintMenu('', ("Work Orders", body, 'Enter a employee kennitala to asign the work order to: '))
             if lookUpkennitala.lower() in quitOrBack:
                 return lookUpkennitala
             employeeId = self.logicWrapper.listEmployees(kennitala = lookUpkennitala)
             if not employeeId:
                 lookUpkennitala = self.takeInputAndPrintMenuWithoutBrackets('', ("Work Orders", body, 'No employee in the system has this kennitala\nEnter a employee kennitala to asign the work order to: '))
 
-        self.logicWrapper.editWorkOrder('id', int(userOrderId), userID = lookUpkennitala)
+        self.logicWrapper.editWorkOrder(entry='id', entryValue=int(userOrderId), userID = lookUpkennitala)
 
         currentWorkOrders = self.logicWrapper.listWorkOrders(userID = 0)
         newBody = self.showWorkOrders(currentWorkOrders)

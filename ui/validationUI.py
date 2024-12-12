@@ -83,6 +83,8 @@ class ValidationUI:
     
     @staticmethod
     def validateNumber(num):
+        if num.lower() in ('q', 'b'):
+            return num
         if num.isdigit():
             if int(num) > 0:
                 return True
@@ -90,7 +92,9 @@ class ValidationUI:
     
     @staticmethod
     def validatePriority(priority):
-        if priority.lower() in ('now', 'emergency', 'not later than tommorow'):
+        if priority.lower() in ('q', 'b'):
+            return priority
+        if priority.lower() in ('now', 'emergency', 'as soon as possible'):
             return True
         return False
 

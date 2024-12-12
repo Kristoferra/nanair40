@@ -5,7 +5,7 @@ from ui.validationUI import ValidationUI
 
 
 validation = ValidationUI()
-AVAILABLE_EDIT_OPTIONS_FUNCTIONS = {'location': validation.validateText, 'address': validation.validateText, 'condition': validation.validateCondition, 'Facilities requiring maintenance': validation.validateText}
+AVAILABLE_EDIT_OPTIONS_FUNCTIONS = {'location': validation.validateText, 'address': validation.validateText, 'condition': validation.validateCondition, 'facilities maintenance': validation.validateText}
 quitOrBack = ['q', 'b']
 
 
@@ -113,19 +113,24 @@ class PropertiesUI(SearchUI):
         '''User searches for a property number and can edit information on that property number'''
         property = []
         # while loop continues asking the user for a property numner until he enters a proptery number that is in the system
+        lookUpproperty = self.getValidInput("Edit property","Enter property number: ", validation.validateText)
         while not property: 
             # ask the user for a property numnber to look up
-            lookUpproperty = self.getValidInput("Edit property","Enter property number: ", validation.validateText)
             if lookUpproperty.lower() in quitOrBack:
                 return lookUpproperty.lower() # if the user enter to either quit or go back, we return that
             # ask the logic layer for the property number user entered, None is returned if the property number doesnt exist
-            property = self.logicWrapper.listProperties(id = lookUpproperty) 
+            property = self.logicWrapper.listProperties(id = lookUpproperty)
+            if not property:
+                lookUpproperty = self.getValidInput("Edit property","A property property doesn´t exist with that property number\nEnter property number: ", validation.validateText)
+
 
         # property items dict keeps track of the current values of the property the user entered
-        properyItemsDict = {'location': property[0].location, 'address': property[0].address, 'condition': property[0].condition, 'facilities requiring maintenance': property[0].facilitiesMaintenance}
+        propertyItemsDict = {'location': property[0].location, 'address': property[0].address, 'condition': property[0].condition, 'facilities maintenance': property[0].facilitiesMaintenance}
         valueToChange = ''
-        while valueToChange not in properyItemsDict: # ask the user what he wants to change until he enters a value that is in the dictionary
-            valueToChange = self.takeInputAndPrintMenu('', ('Edit employee', [f'{key}: {value}' for key, value in properyItemsDict.items()], 'Choose a value to change'))
+        while valueToChange not in propertyItemsDict: # ask the user what he wants to change until he enters a value that is in the dictionary
+            valueToChange = self.takeInputAndPrintMenu('', ('Edit property', [f'{key}: {value}' for key, value in propertyItemsDict.items()], 'Choose a value to change'))
+            if valueToChange.lower() in quitOrBack:
+                return valueToChange.lower()
 
         if valueToChange == 'location':
             location = None
@@ -145,8 +150,11 @@ class PropertiesUI(SearchUI):
             propertyItemsDict['location'] = employeeLocation
             newValue = employeeLocation
         # ask the user for a new value based on what he chose to change, the new value is validated in the getvalidinput function
-        newValue = self.getValidInput('Edit employee',f"Enter a new value for {valueToChange} {'(Excellent, Good, Fair, Poor)' if valueToChange.lower() == 'condition' else ''}", AVAILABLE_EDIT_OPTIONS_FUNCTIONS[valueToChange], properyItemsDict)
-        properyItemsDict[valueToChange.lower()] = newValue # new value added to the properyItemsDict
+        else: 
+            newValue = self.getValidInput('Edit employee',f"Enter a new value for {valueToChange} {'(Excellent, Good, Fair, Poor)' if valueToChange.lower() == 'condition' else ''}", AVAILABLE_EDIT_OPTIONS_FUNCTIONS[valueToChange], propertyItemsDict , '\nInvalid input')
+            if newValue.lower() in quitOrBack:
+                return newValue.lower()
+            propertyItemsDict[valueToChange.lower()] = newValue # new value added to the properyItemsDict
 
         # matching what value the user chose to change, the logic wrapper is called and changes the old value with new in json file
         match valueToChange.lower(): 
@@ -160,7 +168,7 @@ class PropertiesUI(SearchUI):
                 self.logicWrapper.editProperty(entry='id', entryValue=lookUpproperty, condition = newValue)
 
         # print menu telling the user that the values have been changed, and he can either quit or go back
-        return self.takeInputAndPrintMenu('', ('Edit employee', [f'{key}: {value}' for key, value in properyItemsDict.items()], 'Property information has been succesfully updated\nChoose a option: '))
+        return self.takeInputAndPrintMenu('', ('Edit employee', [f'{key}: {value}' for key, value in propertyItemsDict.items()], 'Property information has been succesfully updated\nChoose a option: '))
 
         
 

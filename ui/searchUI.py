@@ -281,7 +281,7 @@ class SearchUI(BaseUI):
 
 
     def workReportSearch(self):
-        userSelection = self.takeInputAndPrintMenu(['Propery search', 'Employee search'], ('Search work reports', ['Propery search', 'Employee search'], 'Choose a option'))
+        userSelection = self.takeInputAndPrintMenu(['Propery search', 'Employee search' , 'Date range search'], ('Search work reports', ['Propery search', 'Employee search', 'Date range search'], 'Choose a option'))
         if userSelection.lower() in quitOrback:
             return userSelection.lower()
         match userSelection.lower():
@@ -308,7 +308,8 @@ class SearchUI(BaseUI):
                     KennitalaWorkReports = self.logicWrapper.listWorkReports(employeeID = lookUpKennitala)
                     body = self.showWorkReports(KennitalaWorkReports)
                     prompt = 'No employee with this kennitala has assigned a work report\nEnter a kennitala: '
-
+            case 'd':
+                pass
         return self.takeInputAndPrintMenuWithoutBrackets([], ('Search work reports', body, 'Choose a option: '))
 
     def showWorkReports(self, workReports: list[WorkReport]) -> str:

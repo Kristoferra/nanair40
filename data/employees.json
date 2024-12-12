@@ -7,5 +7,23 @@
         "address": "test 14",
         "email": "test@test.test",
         "location": "Nuuk"
+    },
+    {
+        "kennitala": "0511042950",
+        "name": "Helgi",
+        "phone": "99999292",
+        "homePhone": "2939230932",
+        "address": "Weofnioew",
+        "email": "Email@",
+        "location": "Nuuk"
+    },
+    {
+        "kennitala": "8239843982",
+        "name": "Wneqoinoire",
+        "phone": "292030932",
+        "homePhone": "823890429382498",
+        "address": "Iasfojiof",
+        "email": "Noniun i@",
+        "location": "Reykjav\u00edk"
     }
 ]

@@ -2,13 +2,12 @@ from ui.propertiesUI import PropertiesUI
 from ui.baseUI import BaseUI
 from ui.employeeUI import EmployeeUI
 from ui.contractorsUI import ContractorsUI
-from ui.workUI import WorkUI
 from ui.janitorUI import JanitorUI
 from ui.searchUI import SearchUI
 from logic.logicWrapper import Logic_Wrapper
 from ui.managerWorkorderUI import ManagerWorkOrder
 
-class mainUI(BaseUI):
+class MainUI(BaseUI):
     def __init__(self):
         self.logicWrapper = Logic_Wrapper()
         self.baseUI = BaseUI()
@@ -18,9 +17,6 @@ class mainUI(BaseUI):
         self.managerWorkOrderUI = ManagerWorkOrder(self.logicWrapper)
         self.janitorUI = JanitorUI(self.logicWrapper)
         self.searchUI = SearchUI(self.logicWrapper)
-
-
-
 
     def mainMenu(self) -> str:
         optionInput = ''
@@ -54,7 +50,8 @@ class mainUI(BaseUI):
             optionInput = self.takeInputAndPrintMenu(options, ('Manager', options, 'Choose a option: '))
 
             
-            match optionInput.lower():  
+
+            match optionInput.lower():
                 case 'e':  # Matching case for comparison
                     returnValue = self.employeeMenu()
                 case 'p':  # Matching case for comparison

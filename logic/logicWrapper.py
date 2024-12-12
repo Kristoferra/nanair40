@@ -40,6 +40,7 @@ class Logic_Wrapper:
             self.currentWorkOrderID = 1
 
 
+
     def addEmployee(self, employee: Employee) -> bool:
         return self.employeeHandler.addEmployee(employee)
     
@@ -68,15 +69,16 @@ class Logic_Wrapper:
     def listWorkOrders(self, **kwargs) -> list['WorkOrder']:
         return self.workOrderHandler.listWorkOrders(**kwargs)
     
+    def listWorkCurrentWorkOrders(self, **kwargs) -> list['WorkOrder']:
+        return self.workOrderHandler.listWorkCurrentOrders(**kwargs)
+    
     def addWorkReport(self, workReport: 'WorkReport') -> bool:
         return self.workReportHandler.addWorkReport(workReport)
     def currentWorkReportID(self) -> int:
         return self.workReportHandler.currentWorkReportID()
 
-    def editWorkOrder(self, workReportID: str, **kwargs) -> bool:
-        return self.workReportHandler.editWorkReport(workReportID, **kwargs)
+    def listWorkOrders(self, **kwargs) -> list[WorkOrder]:
 
-    def listWorkOrders(self, **kwargs) -> list['WorkReport']:
         return self.workOrderHandler.listWorkOrders(**kwargs)
 
     def addContractor(self, contractor: 'Contractor') -> bool:

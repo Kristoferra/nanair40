@@ -4,7 +4,7 @@ from ui.validationUI import ValidationUI
 from ui.searchUI import SearchUI
 
 validation = ValidationUI()
-AVAILABLE_EDIT_OPTIONS_FUNCTIONS = {'name': validation.validateText, 'phone': validation.validatePhone, 'opening hours': validation.validateText, 'location': validation.validateText}
+AVAILABLE_EDIT_OPTIONS_FUNCTIONS = {'name': validation.validateName, 'phone': validation.validatePhone, 'opening hours': validation.validateText, 'location': validation.validateText}
 quitOrBack = ['q', 'b']
 
 class ContractorsUI(SearchUI):
@@ -29,9 +29,8 @@ class ContractorsUI(SearchUI):
         contractorClass = Contractor()
         fields = [    # These are all of the keys, prompts, and values that we need to ask the user
             ('name', "Enter the name of the contractor: ", validation.validateName),
-            ('phone', "Enter the phonenumer of the contractors : ", validation.validatePhone),
-            ('openingHours', "Write the opening hours: ", validation.validateText),
-            ('location', "Enter the location: ", validation.validateText),
+            ('phone', "Enter the phone number (Has to be 7 numbers long): ", validation.validatePhone),
+            ('openingHours', "Write the opening hours(OPENING-CLOSING): ", validation.validateText),
         ]
         
         for key, prompt, validationFunc in fields: # This loops for all keys, prompts and functions the user needs to be askes

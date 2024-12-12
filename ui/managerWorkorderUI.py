@@ -25,7 +25,6 @@ class ManagerWorkOrder(SearchUI):
         property = [] 
         lookUpPropertyNumber = self.takeInputAndPrintMenuWithoutBrackets('', ('Create work order', body, 'Enter a property number: ')) # Ask the user for a property number
         while not property: # While loops keeps going until the wrapper is able return a property instance, it only returns a instance when a correct property number is entered
-            lookUpPropertyNumber = self.takeInputAndPrintMenu('', ('Create work order', body, 'Enter a property number')) # Ask the user for a property number
             if lookUpPropertyNumber in quirOrBack:
                 return lookUpPropertyNumber
             # ask the logic layer whether a property number exists with the user input, none is returned if it doesnt exist
@@ -66,7 +65,6 @@ class ManagerWorkOrder(SearchUI):
         # ask the user fora priority on the work order
         userPriority = self.takeInputAndPrintMenuWithoutBrackets('', ('Create work order', body, 'How important? (Emergency, now, as soon as possible): '))
         while not priority: # While loop continues until the user enters a valid priority description
-            userPriority = self.takeInputAndPrintMenu('', ('Create work order', body, 'How important? (Emergency, now, not later than tommorow): '))
             if userPriority in quirOrBack:
                 return userPriority
             if validation.validatePriority(userPriority): # validare the priority
@@ -134,7 +132,6 @@ class ManagerWorkOrder(SearchUI):
         WorkOrder = None
         lookUpWorkOrderId = self.takeInputAndPrintMenuWithoutBrackets('', ('Edit work orders', ['Search for a CURRENT work order', 'That is a work order that a employee has not assigned himself to'], 'Enter a work order ID: '))
         while not WorkOrder: # while loop continues while the id that the user enters doesnt match any of the current work orders id's
-            lookUpWorkOrderId = self.takeInputAndPrintMenu('', ('Edit work orders', ['Search for a CURRENT work order', 'That is a work order that a employee has not assigned himself to'], 'Enter a work order ID: '))
             if lookUpWorkOrderId.lower() in quirOrBack:
                 return lookUpWorkOrderId.lower()
             # check whether a work order exists with the loop up id the user entered, 0 is returned if not
@@ -174,9 +171,9 @@ class ManagerWorkOrder(SearchUI):
                 self.logicWrapper.editWorkOrder(entry='id', entryValue=WorkOrderInstance.id, description = newValue)
             
             case 'property number':
-                newProperty = [] 
+                newProperty = []
+                newValue = self.getValidInput('Edit work orders', 'Write a new property number for this work order: ', validation.validateText, workOrderDict) # Ask the user for a property number 
                 while not newProperty: # While loops keeps going until the wrapper is able return a property instance, it only returns a instance when a correct property number is entered
-                    newValue = self.getValidInput('Edit work orders', 'Write a new property number for this work order: ', validation.validateText, workOrderDict) # Ask the user for a property number
                     if newValue.lower() in quirOrBack:
                         return newValue.lower()
                      # Check whether a property exists with the number, if it doesnt the none is returened
