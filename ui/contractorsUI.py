@@ -39,6 +39,18 @@ class ContractorsUI(SearchUI):
             if value.lower() in quitOrBack: # If the user entered q or b, then we go back one page or quit
                 return value.lower()
             contractorClass.__dict__[key] = value
+
+        location = None
+        destinations = self.logicWrapper.listLocations()
+        employeeLocation =  self.takeInputAndPrintMenuWithoutBrackets('', ('Add property', [destination.airport for destination in destinations], 'choose a location')).capitalize()
+        while not location:
+            location = self.logicWrapper.listLocations(airport = employeeLocation)
+            if not location:
+                employeeLocation =  self.takeInputAndPrintMenuWithoutBrackets('', ('Add property', [destination.airport for destination in destinations], 'Please choose a location from the given options\nchoose a location: ')).capitalize()
+        contractorClass.__dict__['location'] = employeeLocation
+
+
+
         
         # contractor isntance is created
         newContractor = Contractor(self.logicWrapper.currentContractorID, contractorClass.__dict__["name"], contractorClass.__dict__["phone"], contractorClass.__dict__["openingHours"], contractorClass.__dict__["location"])
@@ -47,7 +59,7 @@ class ContractorsUI(SearchUI):
         self.logicWrapper.addContractor(newContractor)
 
         # Print a menu with all of the contractor information that was just created, the user can either quit or go back
-        return self.takeInputAndPrintMenu(['[Q]uit', '[B]ack'], ('Add Constractor', [f'{key}: {value}' for key, value in newContractor.__dict__.items()], 'The Contractor has been succesfully created\nChoose a option: '))
+        return self.takeInputAndPrintMenuWithoutBrackets(['[Q]uit', '[B]ack'], ('Add Constractor', [f'{key}: {value}' for key, value in newContractor.__dict__.items()], 'The Contractor has been succesfully created\nChoose a option: '))
         
 
 
@@ -71,7 +83,20 @@ class ContractorsUI(SearchUI):
 
             if valueToChange.lower() in quitOrBack: # if the user entered to quit or go back
                 return valueToChange.lower()
-        newValue = self.getValidInput('Edit contractor',  'Enter the new value: ', AVAILABLE_EDIT_OPTIONS_FUNCTIONS[valueToChange], contractorDict)
+        if valueToChange == 'location':
+            location = None
+            destinations = self.logicWrapper.listLocations()
+            employeeLocation =  self.takeInputAndPrintMenuWithoutBrackets('', ('Add property', [destination.airport for destination in destinations], 'choose a location')).capitalize()
+            while not location:
+                if employeeLocation.lower() in quitOrBack:
+                    return employeeLocation.lower()
+                location = self.logicWrapper.listLocations(airport = employeeLocation)
+                if not location:
+                    employeeLocation =  self.takeInputAndPrintMenuWithoutBrackets('', ('Add property', [destination.airport for destination in destinations], 'Please choose a location from the given options\nchoose a location: ')).capitalize()
+            contractorDict['location'] = employeeLocation
+            newValue = employeeLocation
+        else:
+            newValue = self.getValidInput('Edit contractor',  'Enter the new value: ', AVAILABLE_EDIT_OPTIONS_FUNCTIONS[valueToChange.lower()], contractorDict)
 
         # new value added to the dictionary that is keeping track of the contractors values
         contractorDict[valueToChange.lower()] = newValue
@@ -87,7 +112,7 @@ class ContractorsUI(SearchUI):
             case 'location':
                 self.logicWrapper.editContractor(entry='id', entryValue=lookUpContractor, location = newValue)
 
-        return self.takeInputAndPrintMenu(['[Q]uit', '[B]ack'], ('List employees', [f'{key}: {value}' for key, value in list(contractorDict.items())], 'Employee information has been succesfuly updated!\nChoose a option: '))
+        return self.takeInputAndPrintMenuWithoutBrackets(['[Q]uit', '[B]ack'], ('List employees', [f'{key}: {value}' for key, value in list(contractorDict.items())], 'Employee information has been succesfuly updated!\nChoose a option: '))
 
 
 

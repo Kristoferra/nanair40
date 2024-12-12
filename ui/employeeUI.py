@@ -18,11 +18,11 @@ class EmployeeUI(SearchUI):
 
         fields = [
  # These are all of the keys, prompts, and values that we need to ask the user
-            ('name', "Enter your name: ", validation.validateName),
-            ('phone', "Enter a phone number (Has to be 7 numbers long): ", validation.validatePhone),
-            ('homePhone', "Enter a homephone (Has to be 7 numbers long): ", validation.validatePhone),
-            ('address', "Enter a address: ", validation.validateText),
-            ('email', "Enter your email: ", validation.validateEmail),
+            ('name', "Enter your name: ", validation.validateName, 'Invalid input\n'),
+            ('phone', "Enter a phone number: ", validation.validatePhone, 'Phone number length has to be between 7-15\n'),
+            ('homePhone', "Enter a homephone: ", validation.validatePhone, 'Phone number length has to be between 7-15\n'),
+            ('address', "Enter a address: ", validation.validateText, 'Invalid input\n'),
+            ('email', "Enter your email: ", validation.validateEmail, 'Email must include a "@" symbol\n'),
         ]
 
 # Ask the user for a kennitala until he enters a unique kennitala or quits or backs
@@ -37,31 +37,35 @@ class EmployeeUI(SearchUI):
             userClass.__dict__['kennitala'] = employeeKennitala # a unique kennital was entered and assigned to the new employee
 
 
-        for key, prompt, validationFunc in fields: # This loops for all keys, prompts and functions the user needs to be askes
-            value = self.getValidInput('Add employee',prompt, validationFunc, userClass.__dict__)
+        for key, prompt, validationFunc, errorMessage in fields: # This loops for all keys, prompts and functions the user needs to be askes
+            value = self.getValidInput('Add employee',prompt, validationFunc, userClass.__dict__, errorMessage)
             if value.lower() in ('q', 'b'): # If the user entered q or b, then we go back one page or quit
                 if value.lower() in quitOrBack:
                     return value.lower()
             userClass.__dict__[key] = value # add the key value pair to the instance
 
         location = None
-        destinations = self.logicWrapper.listLocations()
+        destinations = self.logicWrapper.listLocations() # get all availavle destionations/locations
+        # ask the user for a input for a location and print the menu
         employeeLocation =  self.takeInputAndPrintMenuWithoutBrackets('', ('Add property', [destination.airport for destination in destinations], 'choose a location')).capitalize()
         while not location:
-            if employeeLocation.lower() in quitOrBack:
-                return employeeLocation.lower()
-            location = self.logicWrapper.listLocations(airport = employeeLocation)
+            if employeeLocation.lower() in quitOrBack: # go back or quit
+                return employeeLocation.lower() 
+            # check if the location the user enterd is available, wrapper returns none if there is no location with this input
+            location = self.logicWrapper.listLocations(airport = employeeLocation) 
             if not location:
+                # if no location matches the user input the user is asked again and the same menu is printed
                 employeeLocation =  self.takeInputAndPrintMenu('', ('Add property', [destination.airport for destination in destinations], 'Please choose a location from the given options\nchoose a location: ')).capitalize()
         userClass.__dict__['location'] = employeeLocation
 
         # Here a instance would get created in order to send to data layer
         new_employee = Employee(userClass.__dict__['kennitala'], userClass.__dict__['name'], userClass.__dict__['phone'], userClass.__dict__['homePhone'], userClass.__dict__['address'], userClass.__dict__['email'], userClass.__dict__['location'])
 
+        # new employee instance sent down to logic layer where, and then stored in json file if all is valid
         self.logicWrapper.addEmployee(new_employee) # ask the logic wrapper to create the new employee the user entered
 
         # User can then only choose from two options either quit or back
-        return self.takeInputAndPrintMenu(['[Q]uit', '[B]ack'], ('Add employee', [f'{key}: {value if value else ''}' for key, value in userClass.__dict__.items()], 'The employee has been succesfully created\nChoose a option: ')) #
+        return self.takeInputAndPrintMenuWithoutBrackets(['[Q]uit', '[B]ack'], ('Add employee', [f'{key}: {value if value else ''}' for key, value in userClass.__dict__.items()], 'The employee has been succesfully created\nChoose a option: ')) #
 
 
 
@@ -87,19 +91,25 @@ class EmployeeUI(SearchUI):
                 return valueToChange.lower()
         # ask the user for a new value, the getvalidinput function asks for a new value and validates the value
 
+
         if valueToChange == 'location':
             location = None
+            # get a list of all locations by calling the wrapper
             destinations = self.logicWrapper.listLocations()
+            #ask the user for a new location change
             employeeLocation =  self.takeInputAndPrintMenuWithoutBrackets('', ('Add property', [destination.airport for destination in destinations], 'choose a location')).capitalize()
             while not location:
-                if employeeLocation.lower() in quitOrBack:
+                if employeeLocation.lower() in quitOrBack: # quit or go back if the user asked for that
                     return employeeLocation.lower()
+                # check with the locig wrappet whether the location user entered exists, if not None is returned
                 location = self.logicWrapper.listLocations(airport = employeeLocation)
                 if not location:
+                    # if logic layer returned none, then the user is asked again
                     employeeLocation =  self.takeInputAndPrintMenuWithoutBrackets('', ('Add property', [destination.airport for destination in destinations], 'Please choose a location from the given options\nchoose a location: ')).capitalize()
             newValue = employeeLocation
 
         else:
+            # if new value is not location, then the user is asked for a new to change, this value is then validated from the global dictionary
             newValue = self.getValidInput('look for employee',  'Enter the new value: ', AVAILABLE_EDIT_OPTIONS_FUNCTIONS[valueToChange], employee[0].__dict__)
             if newValue.lower() in quitOrBack: # if the user entered to quit or go back we return that
                 return newValue.lower()

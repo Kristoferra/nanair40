@@ -24,14 +24,13 @@ class JanitorUI(SearchUI):
                 prompt = 'Enter a property number you would like to see work orders from: '
                 while not property:
                     lookUpProperty = self.showPropertyInfo(propertyList, '', prompt)
+                    if lookUpProperty.lower() in quitOrBack:
+                        return lookUpProperty.lower()
                     property = self.logicWrapper.listProperties(id = lookUpProperty)
                     prompt = 'Please enter a property number from the options above\nEnter a property number you would like to see work orders from: '
                 currentWorkOrders = self.logicWrapper.listWorkOrders(userID = 0, isCompleted = False, propertyNumber = lookUpProperty)
             case 'a':
                 currentWorkOrders = self.logicWrapper.listWorkOrders(userID = 0, isCompleted = False)
-
-
-
 
 
 
@@ -45,7 +44,7 @@ class JanitorUI(SearchUI):
         workOrderIdList = [str(instance.id) for instance in currentWorkOrders] # Get all id's of the current work orders
 
         userOrderId = ''
-        prompt = 'Choose a ID to work on: '
+        prompt = 'Here you can see all work orders prioratized\nChoose a ID to work on: '
         while userOrderId not in workOrderIdList: # while loop continues and keeps asking the user for a ID until the user enters a ID that isa available 
             userOrderId = self.takeInputAndPrintMenuWithoutBrackets('', ("Work Orders", body, prompt))
             if userOrderId.lower() in quitOrBack:
@@ -85,6 +84,8 @@ class JanitorUI(SearchUI):
                 prompt = 'Enter a property number you would like to see work orders from: '
                 while not property:
                     lookUpProperty = self.showPropertyInfo(propertyList, '', prompt)
+                    if lookUpProperty.lower() in quitOrBack:
+                        return lookUpProperty.lower()
                     property = self.logicWrapper.listProperties(id = lookUpProperty)
                     prompt = 'Please enter a property number from the options above\nEnter a property number you would like to see work orders from: '
                 currentWorkOrders = self.logicWrapper.listWorkCurrentWorkOrders(isCompleted = False, propertyNumber = lookUpProperty, sentToManager = False)
@@ -98,7 +99,7 @@ class JanitorUI(SearchUI):
 
         body = self.showWorkOrders(currentWorkOrders) # call the show work orders function and get a string of all work orders and theit info
         if not body:
-            return self.takeInputAndPrintMenu(['[Q]uit', '[B]ack'], ("Create a work report", ['Currently there are no work orders to make a report on!'], 'Choose a option: '))
+            return self.takeInputAndPrintMenuWithoutBrackets(['q', 'b'], ("Create a work report", ['Currently there are no work orders to make a report on!'], 'Choose a option: '))
         availableWorkOrderIds = [str(instance.id) for instance in currentWorkOrders] # list of all id's the user can choose from
 
 
@@ -107,7 +108,7 @@ class JanitorUI(SearchUI):
         # the user is asked for a work ID until her enters a id that is on of the ids that the logic layer gives
         while WorkOrderId not in availableWorkOrderIds: 
             # ask the user for an id until he enters an id in the list
-            WorkOrderId =  self.takeInputAndPrintMenu('', ('Create a work report', body, prompt))
+            WorkOrderId =  self.takeInputAndPrintMenuWithoutBrackets('', ('Create a work report', body, prompt))
             if WorkOrderId.lower() in quitOrBack: # if user enters to quit or go back, we return that
                 return WorkOrderId.lower()
             prompt = 'Please pick a work order ID from the options above\nChoose a Work order to make a report on: '
@@ -149,7 +150,7 @@ class JanitorUI(SearchUI):
         self.logicWrapper.editWorkOrder(entry='id', entryValue=workOrder[0].id, sentToManager = True)
         # create a list if strings that will be pirnted out in the body of next menu
         workReportList = [f'{key}: {value}' for key, value in workReportDict.items()]
-        return self.takeInputAndPrintMenu(['[Q]uit', '[B]ack'], ("Work Orders", workReportList, f'Work report has been created succesfully!\nChoose a option'))
+        return self.takeInputAndPrintMenuWithoutBrackets(['[Q]uit', '[B]ack'], ("Work Orders", workReportList, f'Work report has been created succesfully!\nChoose a option'))
 
 
         

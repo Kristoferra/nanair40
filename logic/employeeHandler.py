@@ -18,15 +18,31 @@ class EmployeeHandler:
             return False
         if self.listEmployes(kennitala=employee.kennitala):
             return False
-        
+        phoneWhitelist = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+"]
         if type(employee.phone) != str:
             return False
         if len(employee.phone) < 7 or len(employee.phone) > 15:
             return False
+        cnt = 0
+        for i in employee.phone:
+            if i == "+":
+                cnt+=1
+            if cnt >= 2:
+                return False
+            if i not in phoneWhitelist:
+                return False
         if type(employee.homePhone) != str:
             return False
         if len(employee.homePhone) < 7 or len(employee.homePhone) > 15:
             return False
+        cnt = 0
+        for i in employee.homePhone:
+            if i == "+":
+                cnt+=1
+            if cnt >= 2:
+                return False
+            if i not in phoneWhitelist:
+                return False
 
         return self.dataWrapper.employeeInsert(employee)
 
@@ -44,17 +60,33 @@ class EmployeeHandler:
                 return False
             if not self.listEmployes(kennitala=entryValue):
                 return False
-        
         if entry == "phone":
-            if type(entry) != str:
+            if type(entryValue) != str:
                 return False
-            if len(entry) < 7 or len(entry) > 15:
+            if len(entryValue) < 7 or len(entryValue) > 15:
+                return False
+        phoneWhitelist = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+"]
+        cnt = 0
+        for i in entryValue:
+            if i == "+":
+                cnt+=1
+            if cnt >= 2:
+                return False
+            if i not in phoneWhitelist:
                 return False
         
         if entry == "homePhone":
-            if type(entry) != str:
+            if type(entryValue) != str:
                 return False
-            if len(entry) < 7 or len(entry) > 15:
+            if len(entryValue) < 7 or len(entryValue) > 15:
+                return False
+        cnt = 0
+        for i in entryValue:
+            if i == "+":
+                cnt+=1
+            if cnt >= 2:
+                return False
+            if i not in phoneWhitelist:
                 return False
 
         return self.dataWrapper.employeeChange(entry, entryValue, **kwargs)
@@ -73,7 +105,7 @@ class EmployeeHandler:
             # Because things get deleted if they do not match the query before we loop through them if we go bottom to top
             for i in range(len(employees)-1, -1, -1):
                 # hack around to check if result that might be int or float partialy contains our target number
-                if str(v) not in str(employees[i].__dict__[k]):
+                if str(v) != str(employees[i].__dict__[k]): # used to be not in but we only want exact matches so
                     del employees[i]
 
 

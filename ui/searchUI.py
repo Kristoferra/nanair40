@@ -138,6 +138,7 @@ class SearchUI(BaseUI):
         try: 
             max_id_length = len('Property ID')
             max_address_length = max(len(employee.address) for employee in propertyList)
+            max_address_length = max(len('address'), max_address_length)
             max_condition_length = 10
             max_location_length = 13
         except ValueError:
@@ -264,9 +265,9 @@ class SearchUI(BaseUI):
             txt += f'       Room/facility: {instance.roomFacilityId}\n'
             txt += f'       Status:{' Not completed' if not instance.isCompleted else ' Completed'}\n\n'
 
-            if instance.priority == 'now':
+            if instance.priority.lower() == 'now':
                 now.append(txt)
-            elif instance.priority == 'emergency':
+            elif instance.priority.lower() == 'emergency':
                 emergency.append(txt)
             else:
                 asap.append(txt)
@@ -280,7 +281,7 @@ class SearchUI(BaseUI):
 
 
     def workReportSearch(self):
-        userSelection = self.takeInputAndPrintMenu(['Propery search', 'Employee search'], ('Search work orders', ['Propery search', 'Employee search'], 'Choose a option'))
+        userSelection = self.takeInputAndPrintMenu(['Propery search', 'Employee search'], ('Search work reports', ['Propery search', 'Employee search'], 'Choose a option'))
         if userSelection.lower() in quitOrback:
             return userSelection.lower()
         match userSelection.lower():
@@ -340,7 +341,6 @@ class SearchUI(BaseUI):
 
     def showContractorsInfo(self, options = 'choose a option', userOption = ['[Q]uit', '[B]ack']) -> str | bool:
         contractors = self.logicWrapper.listContractors()
-
         body = []
 
         # Initialize column names
@@ -348,8 +348,10 @@ class SearchUI(BaseUI):
 
         # Calculate the maximum width for each column
         max_name_length = max(len(contractor.name) for contractor in contractors)
-        max_phone_length = 7
-        max_openingHours_length = 5
+        max_name_length = max(max_name_length, len('Company name'))
+
+        max_phone_length = max(len(contractor.phone) for contractor in contractors)
+        max_openingHours_length = max(len(contractor.openingHours) for contractor in contractors)
         max_location_length = 14
         max_id_length = 5
 

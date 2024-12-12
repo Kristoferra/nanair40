@@ -156,7 +156,7 @@ Choose a option:''', end='')
                 prompt = errorMessage + prompt
                 errorMessage = ''
             self.printBaseMenuNoBrackets(name, [f'{key}: {value if value else ''}' for key, value in userDict.items()], prompt)
-            user_input = input(' ')
+            user_input = input(' ').capitalize()
         
             if validationFunc(user_input):
                 return user_input

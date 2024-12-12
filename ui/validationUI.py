@@ -34,7 +34,7 @@ class ValidationUI:
         """Checks if the phone number is valid, includes only numbers and has len = 7, if [b]ack or [q]uit were entered we return the letter"""
         if phone.lower() in ('q', 'b'):
             return phone
-        if len(phone) != 7:
+        if not 6 < len(phone) < 16:
             return False
         if not phone.isdigit():
             return False
